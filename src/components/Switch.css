@@ -1,0 +1,111 @@
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+.toggle-switch .switch {
+    position: absolute;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.24);
+    border-radius: 1000px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: background-color 0.2s ease;
+}
+.toggle-switch .switch::before {
+    position: absolute;
+    content: "";
+    left: 2px;
+    top: 2px;
+    width: 21px;
+    height: 21px;
+    background: black;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+.toggle-switch input[type="checkbox"]:checked + .switch::before {
+    transform: translateX(25px);
+}
+
+/* red */
+.toggle-switch.red .switch::before {
+    background: #FFF2F2;
+}
+.toggle-switch.red input[type="checkbox"]:checked + .switch::before {
+    background: #FFF2F2;
+}
+.toggle-switch.red input[type="checkbox"]:checked + .switch {
+    background: rgba(255, 76, 76, 0.71);
+}
+
+/* green */
+.toggle-switch.green .switch::before {
+    background: #F2FFF5;
+}
+.toggle-switch.green input[type="checkbox"]:checked + .switch::before {
+    background: #F2FFF5;
+}
+.toggle-switch.green input[type="checkbox"]:checked + .switch {
+    background: rgba(77, 218, 110, 0.62);
+}
+
+/* blue */
+
+.toggle-switch.blue .switch::before {
+    background: #F2F9FF;
+}
+.toggle-switch.blue input[type="checkbox"]:checked + .switch::before {
+    background: #F2F9FF;
+}
+.toggle-switch.blue input[type="checkbox"]:checked + .switch {
+    background: rgba(76, 172, 255, 0.62);
+}
+
+
+/* red dark */
+.toggle-switch.red.dark .switch::before {
+    background: #0D0404;
+}
+.toggle-switch.red.dark .switch {
+    background: rgba(255, 255, 255, 0.24);
+}
+.toggle-switch.red.dark input[type="checkbox"]:checked + .switch::before {
+    background: #0D0404;
+}
+.toggle-switch.red.dark input[type="checkbox"]:checked + .switch {
+    background: #FFF2F2;
+}
+
+/* green dark */
+.toggle-switch.green.dark .switch::before {
+    background: #0D0404;
+}
+.toggle-switch.green.dark .switch {
+    background: rgba(255, 255, 255, 0.24);
+}
+.toggle-switch.green.dark input[type="checkbox"]:checked + .switch::before {
+    background: #0D0404;
+}
+.toggle-switch.green.dark input[type="checkbox"]:checked + .switch {
+    background: #F2FFF5;
+}
+
+/* blue dark */
+.toggle-switch.blue.dark .switch::before {
+    background: #0D0404;
+}
+.toggle-switch.blue.dark .switch {
+    background: rgba(255, 255, 255, 0.24);
+}
+.toggle-switch.blue.dark input[type="checkbox"]:checked + .switch::before {
+    background: #0D0404;
+}
+.toggle-switch.blue.dark input[type="checkbox"]:checked + .switch {
+    background: #F2F9FF;
+}
