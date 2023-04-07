@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/NatigAgarzayev/pomo/static/css/main.819fff4a.css",
-    "main.js": "/NatigAgarzayev/pomo/static/js/main.795f04d0.js",
-    "static/js/845.ada8ee2d.chunk.js": "/NatigAgarzayev/pomo/static/js/845.ada8ee2d.chunk.js",
-    "static/media/lofi.mp3": "/NatigAgarzayev/pomo/static/media/lofi.1b6b10cc2d4f7d70b9d3.mp3",
-    "static/media/faze.mp3": "/NatigAgarzayev/pomo/static/media/faze.11de05f130dfdae39820.mp3",
-    "static/media/red.svg": "/NatigAgarzayev/pomo/static/media/red.d17bff16614f16ec32ad.svg",
-    "static/media/red_dark.svg": "/NatigAgarzayev/pomo/static/media/red_dark.aeb51cfc22d709a5f0ef.svg",
-    "static/media/green.svg": "/NatigAgarzayev/pomo/static/media/green.2cc4a6a13ff526a6ee0e.svg",
-    "static/media/green_dark.svg": "/NatigAgarzayev/pomo/static/media/green_dark.49da54595e57afd2bd8c.svg",
-    "static/media/blue.svg": "/NatigAgarzayev/pomo/static/media/blue.b50815a6f4f2e072d674.svg",
-    "static/media/blue_dark.svg": "/NatigAgarzayev/pomo/static/media/blue_dark.1cc484696bba2426e5ca.svg",
-    "static/media/btnClick.mp3": "/NatigAgarzayev/pomo/static/media/btnClick.42364d3ef775f3d42a0b.mp3",
-    "index.html": "/NatigAgarzayev/pomo/index.html",
-    "main.819fff4a.css.map": "/NatigAgarzayev/pomo/static/css/main.819fff4a.css.map",
-    "main.795f04d0.js.map": "/NatigAgarzayev/pomo/static/js/main.795f04d0.js.map",
-    "845.ada8ee2d.chunk.js.map": "/NatigAgarzayev/pomo/static/js/845.ada8ee2d.chunk.js.map"
+    "main.css": "/pomo/static/css/main.03eea66f.css",
+    "main.js": "/pomo/static/js/main.2165d830.js",
+    "static/js/845.ada8ee2d.chunk.js": "/pomo/static/js/845.ada8ee2d.chunk.js",
+    "static/media/lofi.mp3": "/pomo/static/media/lofi.1b6b10cc2d4f7d70b9d3.mp3",
+    "static/media/faze.mp3": "/pomo/static/media/faze.11de05f130dfdae39820.mp3",
+    "static/media/red.svg": "/pomo/static/media/red.d17bff16614f16ec32ad.svg",
+    "static/media/red_dark.svg": "/pomo/static/media/red_dark.aeb51cfc22d709a5f0ef.svg",
+    "static/media/green.svg": "/pomo/static/media/green.2cc4a6a13ff526a6ee0e.svg",
+    "static/media/green_dark.svg": "/pomo/static/media/green_dark.49da54595e57afd2bd8c.svg",
+    "static/media/blue.svg": "/pomo/static/media/blue.b50815a6f4f2e072d674.svg",
+    "static/media/blue_dark.svg": "/pomo/static/media/blue_dark.1cc484696bba2426e5ca.svg",
+    "static/media/btnClick.mp3": "/pomo/static/media/btnClick.42364d3ef775f3d42a0b.mp3",
+    "index.html": "/pomo/index.html",
+    "main.03eea66f.css.map": "/pomo/static/css/main.03eea66f.css.map",
+    "main.2165d830.js.map": "/pomo/static/js/main.2165d830.js.map",
+    "845.ada8ee2d.chunk.js.map": "/pomo/static/js/845.ada8ee2d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.819fff4a.css",
-    "static/js/main.795f04d0.js"
+    "static/css/main.03eea66f.css",
+    "static/js/main.2165d830.js"
   ]
 }
