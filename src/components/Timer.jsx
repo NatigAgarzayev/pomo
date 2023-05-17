@@ -9,6 +9,8 @@ import lofi from '../audio/lofi.mp3'
 import './Timer.css'
 import 'react-input-range/lib/css/index.css'
 import Switch from './Switch'
+import { Helmet } from 'react-helmet'
+
 function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) {
     const handleSkip = () => {
         if (soundEffects) {
@@ -221,8 +223,30 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
         setTimer3(e.value)
     }
 
+    const [helmetMinutes, setHelmetMinutes] = useState('')
+    const [helmetSeconds, setHelmetSeconds] = useState('')
+
+    useEffect(() => {
+        setHelmetMinutes(minutes < 10 ? '0' + minutes : minutes)
+        setHelmetSeconds(seconds < 10 ? '0' + seconds : seconds)
+    }, [minutes, seconds])
+
+    useEffect(() => {
+        const favicon = document.getElementById('favicon')
+        console.log(favicon.href)
+        console.log(faze.split(' ')[0])
+        favicon.href = `./${faze.split(' ')[0]}.ico`;
+    }, [faze])
+
     return (
         <div className={`back ${stageController} ${darkMode}`}>
+            <Helmet defer={false}>
+                <meta charSet="utf-8" />
+                {/* <link rel="shortcut icon" href={`../images/${faze.split(' ')[0]}.ico`} type="image/x-icon"></link> */}
+                <title>
+                    {`${helmetMinutes}`}:{`${helmetSeconds}`}
+                </title>
+            </Helmet>
             {
                 settings ? (
                     <div className="modal">
