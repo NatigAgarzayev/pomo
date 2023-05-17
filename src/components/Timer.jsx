@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTimer } from 'react-timer-hook'
 import useSound from 'use-sound'
 import Select from 'react-select'
@@ -12,6 +12,9 @@ import Switch from './Switch'
 import { Helmet } from 'react-helmet'
 
 function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) {
+
+    let fadeAnim = useRef()
+
     const handleSkip = () => {
         if (soundEffects) {
             btnClick()
@@ -238,11 +241,18 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
         favicon.href = `./${faze.split(' ')[0]}.ico`;
     }, [faze])
 
+    function closeModal() {
+        fadeAnim.current.classList.remove('fadeIn')
+        fadeAnim.current.classList.add('fadeOut')
+        setTimeout(() => {
+            setSettings(false);
+        }, 150)
+    }
+
     return (
         <div className={`back ${stageController} ${darkMode}`}>
             <Helmet defer={false}>
                 <meta charSet="utf-8" />
-                {/* <link rel="shortcut icon" href={`../images/${faze.split(' ')[0]}.ico`} type="image/x-icon"></link> */}
                 <title>
                     {`${helmetMinutes}`}:{`${helmetSeconds}`}
                 </title>
@@ -250,11 +260,11 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
             {
                 settings ? (
                     <div className="modal">
-                        <div onClick={() => setSettings(false)} className="modal__overlay fadeIn"></div>
-                        <div className={`modal__content fadeIn ${stageController}  ${darkMode}`}>
+                        <div ref={fadeAnim} onClick={closeModal} className="modal__overlay fadeIn"></div>
+                        <div ref={fadeAnim} className={`modal__content fadeIn ${stageController} ${darkMode}`}>
                             <div className="flex">
                                 <h3>Settings</h3>
-                                <svg style={{ cursor: 'pointer' }} onClick={() => setSettings(false)} width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg style={{ cursor: 'pointer' }} onClick={closeModal} width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M22.4633 21.6618C22.5689 21.7684 22.6282 21.9124 22.6282 22.0625C22.6282 22.2126 22.5689 22.3567 22.4633 22.4633C22.3558 22.5673 22.212 22.6254 22.0625 22.6254C21.9129 22.6254 21.7692 22.5673 21.6617 22.4633L17 17.7946L12.3383 22.4633C12.2308 22.5673 12.087 22.6254 11.9375 22.6254C11.7879 22.6254 11.6442 22.5673 11.5367 22.4633C11.4311 22.3567 11.3718 22.2126 11.3718 22.0625C11.3718 21.9124 11.4311 21.7684 11.5367 21.6618L16.2055 17L11.5367 12.3383C11.447 12.229 11.4012 12.0903 11.4081 11.9491C11.415 11.8078 11.4743 11.6743 11.5742 11.5743C11.6742 11.4743 11.8078 11.4151 11.949 11.4082C12.0902 11.4012 12.229 11.4471 12.3383 11.5368L17 16.2055L21.6617 11.5368C21.771 11.4471 21.9097 11.4012 22.051 11.4082C22.1922 11.4151 22.3258 11.4743 22.4257 11.5743C22.5257 11.6743 22.5849 11.8078 22.5919 11.9491C22.5988 12.0903 22.553 12.229 22.4633 12.3383L17.7945 17L22.4633 21.6618Z" fill={dark ? defineColorDarkMode : defineColor} />
                                 </svg>
                             </div>
@@ -283,6 +293,7 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
                             <div style={{ marginTop: 20 }}>
                                 <p>Focus length</p>
                                 <Select
+                                    className='input__select'
                                     value={focusLength}
                                     onChange={(e) => handleFocusLength(e)}
                                     options={focusLengthOptions}
@@ -291,6 +302,7 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
                             <div>
                                 <p>Short length</p>
                                 <Select
+                                    className='input__select'
                                     value={shortLength}
                                     onChange={(e) => handleShortLength(e)}
                                     options={shortLengthOptions}
@@ -299,6 +311,7 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
                             <div>
                                 <p>Long length</p>
                                 <Select
+                                    className='input__select'
                                     value={longLength}
                                     onChange={(e) => handleLongLength(e)}
                                     options={longLengthOptions}

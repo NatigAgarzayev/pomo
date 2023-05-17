@@ -19,10 +19,25 @@
         opacity: 1;
     }
 }
+@keyframes fadeOut {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 
 .fadeIn {
     animation-name: fadeIn;
-    animation-duration: 0.5s;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.2s;
     animation-timing-function: ease;
 }
 
@@ -405,4 +420,8 @@
 .faze__controllers-switch.blue:hover{
     background: rgba(34, 152, 255, 0.62);
     border-radius: 32px;
+}
+
+.input__select{
+    color: black;
 }
