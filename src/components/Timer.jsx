@@ -107,7 +107,7 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
         lofi,
         {
             loop: true,
-            volume: (volumeValue / 100) || 0.3
+            volume: (volumeValue / 100)
         }
     )
     const handlePlay = () => {
