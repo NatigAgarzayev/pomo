@@ -91,8 +91,10 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
 
         //volume
         if (JSON.parse(window.sessionStorage.getItem('volume')) == null) {
+            setTimeout(() => {
+                setVolumeValue(30)
+            }, 1000);
             JSON.stringify(window.sessionStorage.setItem('volume', 30))
-            setVolumeValue(30)
         } else {
             setVolumeValue(JSON.parse(window.sessionStorage.getItem('volume')))
         }
@@ -134,6 +136,7 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
     const [darkMode, setDarkMode] = useState('')
 
     const handleVolume = (e) => {
+        console.log('worked' + e)
         setVolumeValue(e)
         JSON.stringify(window.sessionStorage.setItem('volume', e))
     }
