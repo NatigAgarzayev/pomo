@@ -63,7 +63,6 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
         }
     })
 
-
     useEffect(() => {
         //dark
         if (JSON.parse(window.sessionStorage.getItem('dark')) == null) {
@@ -103,7 +102,7 @@ function Timer({ timer, setTimer1, setTimer2, setTimer3, faze, step, setStep }) 
 
     const [btnClick] = useSound(clickButton)
     const [fazeNot] = useSound(fazeSound)
-    const [volumeValue, setVolumeValue] = useState(JSON.parse(window.sessionStorage.getItem('volume')))
+    const [volumeValue, setVolumeValue] = useState(JSON.parse(window.sessionStorage.getItem('volume')) || 30)
 
     const [lofiMusic, { sound, stop, isPlaying }] = useSound(
         lofi,
